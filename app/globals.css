@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f7f3ee;
+  --bg-rgb: 247, 243, 238;
+  --ink: #1c1917;
+  --primary: #c4602a;
+  --accent: #4a7c6f;
+  --surface: #ffffff;
+  --border: #e8e0d4;
+  --result-hero: #1c2b3a;
+  /* RIASEC typekleuren */
+  --type-r: #c4602a;
+  --type-i: #2e6da4;
+  --type-a: #7b4d8e;
+  --type-s: #4a7c6f;
+  --type-e: #d4862a;
+  --type-c: #2d7a4f;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[var(--bg)] text-[var(--ink)] antialiased;
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-[var(--accent)];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .nav-blur {
+    background: rgba(var(--bg-rgb), 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .btn-press {
+    @apply transition-transform duration-150;
+  }
+
+  .btn-press:hover {
+    transform: scale(1.03);
+  }
+
+  .btn-press:active {
+    transform: scale(0.97);
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-hero-float {
+  animation: hero-float 8s ease-in-out infinite;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+}
