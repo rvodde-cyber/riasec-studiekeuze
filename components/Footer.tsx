@@ -1,8 +1,11 @@
+import { brand } from "@/lib/brand";
+
 export default function Footer() {
   const jaar = new Date().getFullYear();
   return (
     <footer className="border-t border-border bg-surface/80 no-print">
-      <div className="mx-auto max-w-5xl px-4 py-10 text-sm text-ink/80 leading-relaxed space-y-4">
+      <div className="mx-auto max-w-5xl space-y-4 px-4 py-10 text-sm leading-relaxed text-ink/80">
+        <p className="text-ink/70">{brand.standaloneNotice}</p>
         <p>
           <strong className="text-ink">Wetenschappelijke basis:</strong>{" "}
           Gebaseerd op het RIASEC-model van John Holland (1959) — vrij te
@@ -20,7 +23,9 @@ export default function Footer() {
             tijdelijk in jouw browser (sessionStorage).
           </span>
         </p>
-        <p className="text-ink/60">© {jaar} RIASEC Studiekeuze</p>
+        <p className="text-ink/60">
+          © {jaar} {brand.copyright} · {brand.productLine}
+        </p>
       </div>
     </footer>
   );

@@ -13,6 +13,7 @@ import {
   letterNaarHex,
   typeMeta,
 } from "@/data/riasec-data";
+import { brand } from "@/lib/brand";
 import { berekenCode, maxScorePerType, TYPE_ORDER } from "@/lib/scoring";
 import type { RIASECLetter } from "@/lib/scoring";
 import { useRiasecStore } from "@/store/riasecStore";
@@ -86,7 +87,7 @@ export default function ResultaatPage() {
             </p>
             <p className="mt-2 text-surface/80">{datumLang}</p>
             <p className="mt-1 text-xs text-surface/60">
-              Gegenereerd via RIASEC Studiekeuze · riasec-app.vercel.app
+              Gegenereerd via {brand.name} · {brand.siteUrl}
             </p>
             <h1 className="mt-8 font-display text-3xl text-surface md:text-4xl">
               Jouw code:

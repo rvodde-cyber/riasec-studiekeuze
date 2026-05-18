@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navigatie from "@/components/Navigatie";
 import Footer from "@/components/Footer";
+import { brand } from "@/lib/brand";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -26,9 +27,12 @@ const mono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RIASEC Studiekeuze",
-  description:
-    "Ontdek via het RIASEC-model van John Holland welke beroepen en hbo-opleidingen bij jou passen — zonder login, met respect voor je privacy.",
+  title: {
+    default: brand.name,
+    template: `%s · ${brand.name}`,
+  },
+  description: `${brand.tagline}. Welke beroepen en hbo-opleidingen passen bij jou? Zonder login, met respect voor je privacy.`,
+  applicationName: brand.name,
 };
 
 export default function RootLayout({

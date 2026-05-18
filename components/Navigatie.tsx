@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { brand } from "@/lib/brand";
 
 const links = [
   { href: "/", label: "Welkom" },
@@ -48,7 +49,12 @@ export default function Navigatie() {
               />
             </svg>
           </span>
-          <span>RIASEC Studiekeuze</span>
+          <span className="flex flex-col leading-tight">
+            <span>{brand.name}</span>
+            <span className="hidden font-sans text-xs font-normal text-ink/60 sm:block">
+              {brand.tagline}
+            </span>
+          </span>
         </Link>
 
         <button

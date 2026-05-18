@@ -1,5 +1,6 @@
 import Link from "next/link";
 import WelkomLandschap from "@/components/illustraties/WelkomLandschap";
+import { brand } from "@/lib/brand";
 import { letterNaarHex, typeMeta, typeVolgorde } from "@/data/riasec-data";
 import type { RIASECLetter } from "@/lib/scoring";
 
@@ -11,11 +12,12 @@ export default function HomePage() {
           <WelkomLandschap />
         </div>
         <div className="mx-auto max-w-3xl px-4 pb-12 pt-6 text-center">
-          <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-surface/90 px-4 py-2 text-sm text-ink/80">
+          <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-surface/90 px-4 py-2 text-sm text-ink/80">
             <span aria-hidden>🔒</span>
             Geen login nodig · Jouw antwoorden worden niet opgeslagen op een
             server
           </p>
+          <p className="mb-3 text-sm text-ink/60">{brand.standaloneNotice}</p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-ink md:text-5xl lg:text-6xl">
             Ontdek jouw richting
           </h1>
