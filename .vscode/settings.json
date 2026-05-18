@@ -1,0 +1,7 @@
+{
+  "window.title": "Loopbaantest",
+  "files.exclude": {
+    "**/.next": true,
+    "**/node_modules": true
+  }
+}
