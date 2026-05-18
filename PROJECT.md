@@ -7,7 +7,7 @@
 | | |
 |---|---|
 | **Productnaam** | Loopbaantest |
-| **Methode** | RIASEC-model (John Holland, 1959) |
+| **Methode** | RIASOC-model (John Holland, 1959) — Nederlandse letter O voor Ondernemend |
 | **Doelgroep** | Middelbare scholieren en hbo-studenten |
 | **Stack** | Next.js 14, TypeScript, Tailwind, Framer Motion |
 

@@ -8,9 +8,9 @@ import {
   typeMeta,
   typeVolgorde,
   vragen,
-} from "@/data/riasec-data";
-import type { RIASECLetter } from "@/lib/scoring";
-import { useRiasecStore } from "@/store/riasecStore";
+} from "@/data/riasoc-data";
+import type { RIASOCLetter } from "@/lib/scoring";
+import { useRiasocStore } from "@/store/riasocStore";
 
 function blockComplete(answers: (number | null)[], block: number) {
   const start = block * 7;
@@ -19,11 +19,11 @@ function blockComplete(answers: (number | null)[], block: number) {
 
 export default function TestPage() {
   const router = useRouter();
-  const currentIndex = useRiasecStore((s) => s.currentQuestionIndex);
-  const answers = useRiasecStore((s) => s.answers);
-  const pausedAfterBlock = useRiasecStore((s) => s.pausedAfterBlock);
-  const setAnswerAt = useRiasecStore((s) => s.setAnswerAt);
-  const clearPause = useRiasecStore((s) => s.clearPause);
+  const currentIndex = useRiasocStore((s) => s.currentQuestionIndex);
+  const answers = useRiasocStore((s) => s.answers);
+  const pausedAfterBlock = useRiasocStore((s) => s.pausedAfterBlock);
+  const setAnswerAt = useRiasocStore((s) => s.setAnswerAt);
+  const clearPause = useRiasocStore((s) => s.clearPause);
 
   const activeBlock = Math.min(5, Math.floor(currentIndex / 7));
   const vraagNummerInBlok = (currentIndex % 7) + 1;
@@ -38,11 +38,11 @@ export default function TestPage() {
     }
   };
 
-  const volgendeType: RIASECLetter | null =
+  const volgendeType: RIASOCLetter | null =
     pausedAfterBlock !== null && pausedAfterBlock < 5
       ? typeVolgorde[pausedAfterBlock + 1]
       : null;
-  const afgerondType: RIASECLetter | null =
+  const afgerondType: RIASOCLetter | null =
     pausedAfterBlock !== null ? typeVolgorde[pausedAfterBlock] : null;
 
   return (

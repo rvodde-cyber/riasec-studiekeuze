@@ -43,7 +43,7 @@ export async function downloadResultaatPDF(code: string): Promise<void> {
     pdf.setFontSize(8);
     pdf.setTextColor(80, 80, 80);
     pdf.text(
-      "Gebaseerd op het RIASEC-model van John Holland (1959) · Geen officieel psychologisch instrument",
+      "Gebaseerd op het RIASOC-model van John Holland (1959) · Geen officieel psychologisch instrument",
       10,
       footerY
     );
@@ -51,5 +51,5 @@ export async function downloadResultaatPDF(code: string): Promise<void> {
   }
 
   const datum = new Date().toISOString().split("T")[0];
-  pdf.save(`RIASEC-resultaat-${code}-${datum}.pdf`);
+  pdf.save(`RIASOC-resultaat-${code}-${datum}.pdf`);
 }

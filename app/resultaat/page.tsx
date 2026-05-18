@@ -12,14 +12,14 @@ import {
   filterBeroepenVoorCode,
   letterNaarHex,
   typeMeta,
-} from "@/data/riasec-data";
+} from "@/data/riasoc-data";
 import { brand } from "@/lib/brand";
 import { berekenCode, maxScorePerType, TYPE_ORDER } from "@/lib/scoring";
-import type { RIASECLetter } from "@/lib/scoring";
-import { useRiasecStore } from "@/store/riasecStore";
+import type { RIASOCLetter } from "@/lib/scoring";
+import { useRiasocStore } from "@/store/riasocStore";
 
 function useVolledigeAntwoorden(): number[] | null {
-  const answers = useRiasecStore((s) => s.answers);
+  const answers = useRiasocStore((s) => s.answers);
   return useMemo(() => {
     if (answers.some((a) => a === null)) return null;
     return answers as number[];
@@ -29,7 +29,7 @@ function useVolledigeAntwoorden(): number[] | null {
 export default function ResultaatPage() {
   const router = useRouter();
   const antwoorden = useVolledigeAntwoorden();
-  const resetTest = useRiasecStore((s) => s.resetTest);
+  const resetTest = useRiasocStore((s) => s.resetTest);
   const [pdfBusy, setPdfBusy] = useState(false);
 
   if (!antwoorden) {
@@ -50,7 +50,7 @@ export default function ResultaatPage() {
   }
 
   const { code, scores } = berekenCode(antwoorden);
-  const letters = code.split("") as RIASECLetter[];
+  const letters = code.split("") as RIASOCLetter[];
   const beroepenLijst = filterBeroepenVoorCode(code, 8);
   const opleidingen = Array.from(
     new Set(beroepenLijst.map((b) => b.opleiding))
@@ -83,7 +83,7 @@ export default function ResultaatPage() {
           <HeroSterren />
           <div className="relative z-[1] mx-auto max-w-4xl px-4 py-14 text-center md:py-20">
             <p className="text-sm uppercase tracking-[0.2em] text-surface/70">
-              Jouw RIASEC-resultaat
+              Jouw RIASOC-resultaat
             </p>
             <p className="mt-2 text-surface/80">{datumLang}</p>
             <p className="mt-1 text-xs text-surface/60">

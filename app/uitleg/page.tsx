@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import UitlegKaart from "@/components/illustraties/UitlegKaart";
-import { useRiasecStore, type LeeftijdCategorie } from "@/store/riasecStore";
+import { useRiasocStore, type LeeftijdCategorie } from "@/store/riasocStore";
 
 const leeftijden: LeeftijdCategorie[] = [
   "<18",
@@ -36,10 +36,10 @@ const stappen = [
 ];
 
 export default function UitlegPage() {
-  const groupCode = useRiasecStore((s) => s.groupCode);
-  const ageCategory = useRiasecStore((s) => s.ageCategory);
-  const setGroupCode = useRiasecStore((s) => s.setGroupCode);
-  const setAgeCategory = useRiasecStore((s) => s.setAgeCategory);
+  const groupCode = useRiasocStore((s) => s.groupCode);
+  const ageCategory = useRiasocStore((s) => s.ageCategory);
+  const setGroupCode = useRiasocStore((s) => s.setGroupCode);
+  const setAgeCategory = useRiasocStore((s) => s.setAgeCategory);
 
   return (
     <div className="mx-auto max-w-4xl px-4 pb-20">

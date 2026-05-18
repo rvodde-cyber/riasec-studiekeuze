@@ -2,14 +2,14 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
-import { beroepen, letterNaarHex, typeMeta } from "@/data/riasec-data";
-import type { RIASECLetter } from "@/lib/scoring";
+import { beroepen, letterNaarHex, typeMeta } from "@/data/riasoc-data";
+import type { RIASOCLetter } from "@/lib/scoring";
 import { TYPE_ORDER } from "@/lib/scoring";
 
 export default function VerkennenPage() {
-  const [filter, setFilter] = useState<Set<RIASECLetter>>(() => new Set());
+  const [filter, setFilter] = useState<Set<RIASOCLetter>>(() => new Set());
 
-  const toggle = (l: RIASECLetter) => {
+  const toggle = (l: RIASOCLetter) => {
     setFilter((prev) => {
       const n = new Set(prev);
       if (n.has(l)) n.delete(l);
@@ -33,7 +33,7 @@ export default function VerkennenPage() {
           Klik op een of meer types om te filteren. Je kunt ook combinaties
           kiezen.
         </p>
-        <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter op RIASEC-type">
+        <div className="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter op RIASOC-type">
           {TYPE_ORDER.map((l) => {
             const aan = filter.has(l);
             return (

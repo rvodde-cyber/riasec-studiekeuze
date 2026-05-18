@@ -6,6 +6,6 @@
     }
   ],
   "settings": {
-    "window.title": "Loopbaantest"
+    "typescript.tsdk": "node_modules/typescript/lib"
   }
 }

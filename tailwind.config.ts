@@ -20,7 +20,7 @@ const config: Config = {
         "type-i": "var(--type-i)",
         "type-a": "var(--type-a)",
         "type-s": "var(--type-s)",
-        "type-e": "var(--type-e)",
+        "type-o": "var(--type-o)",
         "type-c": "var(--type-c)",
       },
       fontFamily: {

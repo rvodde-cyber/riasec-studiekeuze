@@ -1,14 +1,14 @@
-import type { RIASECLetter } from "@/lib/scoring";
+import type { RIASOCLetter } from "@/lib/scoring";
 
 export type Beroep = {
-  code: RIASECLetter;
+  code: RIASOCLetter;
   beroep: string;
   opleiding: string;
   omschrijving: string;
 };
 
 export type TypeMeta = {
-  letter: RIASECLetter;
+  letter: RIASOCLetter;
   naam: string;
   emoji: string;
   tagline: string;
@@ -18,9 +18,9 @@ export type TypeMeta = {
   tailwindColor: string;
 };
 
-export const typeVolgorde: RIASECLetter[] = ["R", "I", "A", "S", "E", "C"];
+export const typeVolgorde: RIASOCLetter[] = ["R", "I", "A", "S", "O", "C"];
 
-export const typeMeta: Record<RIASECLetter, TypeMeta> = {
+export const typeMeta: Record<RIASOCLetter, TypeMeta> = {
   R: {
     letter: "R",
     naam: "Realistisch",
@@ -101,8 +101,8 @@ export const typeMeta: Record<RIASECLetter, TypeMeta> = {
     ],
     tailwindColor: "type-s",
   },
-  E: {
-    letter: "E",
+  O: {
+    letter: "O",
     naam: "Ondernemend",
     emoji: "💡",
     tagline: "Ik neem graag het voortouw en overtuig anderen",
@@ -119,7 +119,7 @@ export const typeMeta: Record<RIASECLetter, TypeMeta> = {
       "strategisch",
       "ondernemend",
     ],
-    tailwindColor: "type-e",
+    tailwindColor: "type-o",
   },
   C: {
     letter: "C",
@@ -213,12 +213,12 @@ export const beroepen: Beroep[] = [
   { code: "S", beroep: "HR-adviseur", opleiding: "Human Resource Management (hbo)", omschrijving: "Begeleidt medewerkers en ontwikkelt personeelsbeleid." },
   { code: "S", beroep: "Pedagogisch begeleider", opleiding: "Pedagogiek (hbo)", omschrijving: "Begeleidt kinderen en jongeren in hun ontwikkeling." },
   { code: "S", beroep: "Loopbaancoach", opleiding: "HRM / Coaching (hbo)", omschrijving: "Helpt mensen bij het ontdekken van hun loopbaanrichting." },
-  { code: "E", beroep: "Manager / Teamleider", opleiding: "Bedrijfskunde / Management (hbo)", omschrijving: "Stuurt teams aan en neemt strategische beslissingen." },
-  { code: "E", beroep: "Marketing specialist", opleiding: "Commerciële Economie (hbo)", omschrijving: "Ontwikkelt campagnes om producten te promoten." },
-  { code: "E", beroep: "Ondernemer", opleiding: "Entrepreneurship / IBS (hbo)", omschrijving: "Bouwt een eigen bedrijf of project op." },
-  { code: "E", beroep: "Jurist (HBO)", opleiding: "HBO-Rechten", omschrijving: "Adviseert over juridische kwesties." },
-  { code: "E", beroep: "Evenementenmanager", opleiding: "Event Management (hbo)", omschrijving: "Organiseert events van concept tot uitvoering." },
-  { code: "E", beroep: "Communicatieadviseur", opleiding: "Communicatie (hbo)", omschrijving: "Ontwikkelt communicatiestrategieën voor organisaties." },
+  { code: "O", beroep: "Manager / Teamleider", opleiding: "Bedrijfskunde / Management (hbo)", omschrijving: "Stuurt teams aan en neemt strategische beslissingen." },
+  { code: "O", beroep: "Marketing specialist", opleiding: "Commerciële Economie (hbo)", omschrijving: "Ontwikkelt campagnes om producten te promoten." },
+  { code: "O", beroep: "Ondernemer", opleiding: "Entrepreneurship / IBS (hbo)", omschrijving: "Bouwt een eigen bedrijf of project op." },
+  { code: "O", beroep: "Jurist (HBO)", opleiding: "HBO-Rechten", omschrijving: "Adviseert over juridische kwesties." },
+  { code: "O", beroep: "Evenementenmanager", opleiding: "Event Management (hbo)", omschrijving: "Organiseert events van concept tot uitvoering." },
+  { code: "O", beroep: "Communicatieadviseur", opleiding: "Communicatie (hbo)", omschrijving: "Ontwikkelt communicatiestrategieën voor organisaties." },
   { code: "C", beroep: "Accountant", opleiding: "Accountancy (hbo)", omschrijving: "Controleert en rapporteert over financiële administratie." },
   { code: "C", beroep: "Logistiek manager", opleiding: "Logistiek & Economie (hbo)", omschrijving: "Optimaliseert transport- en distributieprocessen." },
   { code: "C", beroep: "Bedrijfsadministrateur", opleiding: "Bedrijfseconomie (hbo)", omschrijving: "Beheert financiële en administratieve processen." },
@@ -227,20 +227,20 @@ export const beroepen: Beroep[] = [
   { code: "C", beroep: "Belastingadviseur", opleiding: "Fiscaal Recht / Accountancy (hbo)", omschrijving: "Adviseert over belastingzaken." },
 ];
 
-export function letterNaarHex(letter: RIASECLetter): string {
-  const map: Record<RIASECLetter, string> = {
+export function letterNaarHex(letter: RIASOCLetter): string {
+  const map: Record<RIASOCLetter, string> = {
     R: "#C4602A",
     I: "#2E6DA4",
     A: "#7B4D8E",
     S: "#4A7C6F",
-    E: "#D4862A",
+    O: "#D4862A",
     C: "#2D7A4F",
   };
   return map[letter];
 }
 
 export function filterBeroepenVoorCode(code: string, max = 8): Beroep[] {
-  const top = code.slice(0, 2).split("") as RIASECLetter[];
+  const top = code.slice(0, 2).split("") as RIASOCLetter[];
   if (top.length < 2) return beroepen.slice(0, max);
   const set = new Set(top);
   const match = beroepen.filter((b) => set.has(b.code));

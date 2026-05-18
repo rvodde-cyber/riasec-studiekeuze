@@ -8,7 +8,7 @@ export default function Footer() {
         <p className="text-ink/70">{brand.standaloneNotice}</p>
         <p>
           <strong className="text-ink">Wetenschappelijke basis:</strong>{" "}
-          Gebaseerd op het RIASEC-model van John Holland (1959) — vrij te
+          Gebaseerd op het RIASOC-model van John Holland (1959) — vrij te
           gebruiken in het onderwijs.
         </p>
         <p>

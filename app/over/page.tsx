@@ -10,11 +10,13 @@ export default function OverPage() {
       <section className="mt-12 space-y-4">
         <h2 className="font-display text-2xl text-ink">Achtergrond</h2>
         <p className="text-ink/85">
-          Het RIASEC-model is ontwikkeld door de Amerikaanse psycholoog John
-          Holland in de jaren vijftig. Het verdeelt interesses grofweg in zes
-          types: Realistisch, Intellectueel, Artistiek, Sociaal, Ondernemend en
-          Conventioneel. Het model wordt breed gebruikt in studie- en
-          loopbaanbegeleiding, altijd in combinatie met gesprek en context.
+          Het RIASOC-model is gebaseerd op het werk van de Amerikaanse psycholoog
+          John Holland (jaren vijftig). In het Nederlands gebruiken we de
+          letters R-I-A-S-O-C: Realistisch, Intellectueel, Artistiek, Sociaal,
+          Ondernemend en Conventioneel — met O voor Ondernemend in plaats van de
+          internationale E (Enterprising). Het model wordt breed gebruikt in
+          studie- en loopbaanbegeleiding, altijd in combinatie met gesprek en
+          context.
         </p>
         <p className="text-ink/85">
           Deze webapp gebruikt een verkorte zelfrapportagelijst met

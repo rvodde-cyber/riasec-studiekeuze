@@ -7,7 +7,7 @@ export type LeeftijdCategorie = "<18" | "18-25" | "26-40" | "41-60" | "60+";
 
 const EMPTY_ANSWERS = () => Array.from({ length: 42 }, () => null as number | null);
 
-export type RiasecState = {
+export type RiasocState = {
   groupCode: string;
   ageCategory: LeeftijdCategorie | "";
   answers: (number | null)[];
@@ -21,7 +21,7 @@ export type RiasecState = {
   resetTest: () => void;
 };
 
-export const useRiasecStore = create<RiasecState>()(
+export const useRiasocStore = create<RiasocState>()(
   persist(
     (set, get) => ({
       groupCode: "",
@@ -66,7 +66,7 @@ export const useRiasecStore = create<RiasecState>()(
         }),
     }),
     {
-      name: "riasec-studiekeuze",
+      name: "loopbaantest-riasoc",
       storage: createJSONStorage(() => sessionStorage),
       partialize: (s) => ({
         groupCode: s.groupCode,
@@ -80,7 +80,7 @@ export const useRiasecStore = create<RiasecState>()(
 );
 
 export function useAntwoordenAlsNummers(): number[] | null {
-  const answers = useRiasecStore((s) => s.answers);
+  const answers = useRiasocStore((s) => s.answers);
   if (answers.some((a) => a === null)) return null;
   return answers as number[];
 }

@@ -2,7 +2,7 @@
 export const brand = {
   name: "Loopbaantest",
   shortName: "Loopbaantest",
-  tagline: "Ontdek jouw richting met het RIASEC-model",
+  tagline: "Ontdek jouw richting met het RIASOC-model",
   productLine:
     "Zelfstandig loopbaan-instrument voor middelbare scholieren en hbo-studenten",
   siteUrl: "loopbaantest.vercel.app",

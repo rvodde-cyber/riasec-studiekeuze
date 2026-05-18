@@ -1,6 +1,6 @@
 # Loopbaantest
 
-Zelfstandige webapp waarmee leerlingen en studenten via het **RIASEC-model** ontdekken welke beroepen en hbo-opleidingen bij hen passen.
+Zelfstandige webapp waarmee leerlingen en studenten via het **RIASOC-model** (R-I-A-S-O-C, met O voor Ondernemend) ontdekken welke beroepen en hbo-opleidingen bij hen passen.
 
 - Geen login · privacy via `sessionStorage`
 - 42 vragen · persoonlijke drielettercode · PDF-resultaat

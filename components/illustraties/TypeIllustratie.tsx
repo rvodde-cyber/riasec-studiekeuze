@@ -1,10 +1,10 @@
-import type { RIASECLetter } from "@/lib/scoring";
+import type { RIASOCLetter } from "@/lib/scoring";
 
 export default function TypeIllustratie({
   letter,
   className = "",
 }: {
-  letter: RIASECLetter;
+  letter: RIASOCLetter;
   className?: string;
 }) {
   const base = `w-full h-28 md:h-32 ${className}`;
@@ -51,7 +51,7 @@ export default function TypeIllustratie({
           ))}
         </svg>
       );
-    case "E":
+    case "O":
       return (
         <svg viewBox="0 0 200 100" className={base} aria-hidden>
           <path

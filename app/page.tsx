@@ -1,8 +1,8 @@
 import Link from "next/link";
 import WelkomLandschap from "@/components/illustraties/WelkomLandschap";
 import { brand } from "@/lib/brand";
-import { letterNaarHex, typeMeta, typeVolgorde } from "@/data/riasec-data";
-import type { RIASECLetter } from "@/lib/scoring";
+import { letterNaarHex, typeMeta, typeVolgorde } from "@/data/riasoc-data";
+import type { RIASOCLetter } from "@/lib/scoring";
 
 export default function HomePage() {
   return (
@@ -29,13 +29,13 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-3xl px-4 py-12">
         <h2 className="font-display text-2xl text-ink md:text-3xl mb-6">
-          Wat is de RIASEC-test?
+          Wat is de RIASOC-test?
         </h2>
         <div className="space-y-4 text-ink/85">
           <p>
             Psycholoog John Holland ontdekte dat mensen grofweg in zes typen te
             verdelen zijn op basis van wat ze interessant en leuk vinden. Die
-            typen noemen we RIASEC.
+            typen noemen we RIASOC (met O voor Ondernemend).
           </p>
           <p>
             Door 42 korte vragen te beantwoorden, krijg jij een persoonlijke
@@ -50,9 +50,9 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-6">
-        <h2 className="sr-only">De zes RIASEC-types</h2>
+        <h2 className="sr-only">De zes RIASOC-types</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {typeVolgorde.map((k: RIASECLetter) => {
+          {typeVolgorde.map((k: RIASOCLetter) => {
             const t = typeMeta[k];
             return (
               <article
